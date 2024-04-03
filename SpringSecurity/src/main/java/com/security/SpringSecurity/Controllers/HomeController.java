@@ -1,5 +1,6 @@
 package com.security.SpringSecurity.Controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class HomeController {
     public List<User> getUser(){
         System.out.println("return home");
         return this.userService.getUsers();
+    }
+
+    @GetMapping("/currentUser")
+    public String getCurrentUser(Principal principal){
+       return principal.getName();
     }
     
 }
