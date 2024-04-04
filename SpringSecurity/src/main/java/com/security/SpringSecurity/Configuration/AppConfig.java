@@ -25,21 +25,21 @@ public class AppConfig {
         return builder.getAuthenticationManager();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails user = User.builder()
-                .username("rohit")
-                .password(passwordEncoder().encode("abc"))
-                .roles("ADMIN")
-                .build();
-        UserDetails user1 = User.builder()
-                .username("sud")
-                .password(passwordEncoder().encode("123"))
-                .roles("USER")
-                .build();
+    // @Bean
+    // public UserDetailsService userDetailsService() {
+    //     UserDetails user = User.builder()
+    //             .username("rohit")
+    //             .password(passwordEncoder().encode("abc"))
+    //             .roles("ADMIN")
+    //             .build();
+    //     UserDetails user1 = User.builder()
+    //             .username("sud")
+    //             .password(passwordEncoder().encode("123"))
+    //             .roles("USER")
+    //             .build();
 
-        return new InMemoryUserDetailsManager(user,user1);
+    //     return new InMemoryUserDetailsManager(user,user1);
 
         
-    }
+    // }
 }
