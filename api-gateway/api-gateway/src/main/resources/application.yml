@@ -3,7 +3,7 @@ spring:
     gateway:
       routes:
         - id: spring-security
-          uri: lb://SPRING-SECURITY
+          uri: http://localhost:2020  # Direct URI of your authentication service
           predicates:
             - Path=/auth/**
           filters:
@@ -12,6 +12,6 @@ spring:
 server:
   port: 8888
 
+application:
+  name: API-GATEWAY
 
-  application:
-    name: API-GATEWAY
