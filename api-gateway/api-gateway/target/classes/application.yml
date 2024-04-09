@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: spring-security
+          uri: lb://SPRING-SECURITY
+          predicates:
+            - Path=/auth/**
+          filters:
+            - name: AuthenticationFilter
+
+server:
+  port: 8888
+
+
+  application:
+    name: API-GATEWAY
