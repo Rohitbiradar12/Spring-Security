@@ -19,14 +19,8 @@ public class JwtHelper {
 
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
-     private static final String SECRET_KEY = generateSecretKey();
+     private static final String SECRET_KEY = "afafasfafafasfasfasfafacasdasfasxASFACASDFACASDFASFASFDAFASFASDAADSCSDFADCVSGCFVADXCcadwavfsfarvf";
 
-    private static String generateSecretKey() {
-        SecureRandom random = new SecureRandom();
-        byte[] bytes = new byte[64];
-        random.nextBytes(bytes);
-        return Base64.getEncoder().encodeToString(bytes);
-    }
    
 
     public String getUsernameFromToken(String token) {
